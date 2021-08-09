@@ -152,7 +152,7 @@ class DeepSpeedEngine(Module):
 
         import mlflow
         mlflow.autolog()
-        mlflow.set_tag("deepspeed_tag", "runtime_tag")
+        mlflow.log_param("tbx_autolog", "true")
 
         if self.tensorboard_enabled() and self.global_rank == 0:
             self.summary_writer = self.get_summary_writer()
